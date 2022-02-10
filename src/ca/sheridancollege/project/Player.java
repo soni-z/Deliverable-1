@@ -8,6 +8,7 @@ package ca.sheridancollege.project;
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  * @author dancye, 2018
+ * @modifier data pirates
  */
 public abstract class Player 
 {
@@ -34,6 +35,24 @@ public abstract class Player
      * Ensure that the playerID is unique
      * @param givenID the playerID to set
      */
+    public static void main(String[] args){
+        Game ch = new Game() {
+            @Override
+            public void play() {
+               this.play(); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void declareWinner() {
+               this.declareWinner();//To change body of generated methods, choose Tools | Templates.
+            }
+        };
+                ch.generateHand();
+                for(Card c: ch.cards)
+                {
+                    System.out.println(c.getValue() + " of " + c.getColors());
+                }
+    }
     public void setPlayerID(String givenID) 
     {
         playerID = givenID;
