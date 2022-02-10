@@ -11,9 +11,29 @@ import java.util.ArrayList;
  * The class that models your game. You should create a more specific
  * child of this class and instantiate the methods given.
  * @author dancye, 2018
+ * @modifier data pirates
  */
 public abstract class Game 
 {
+     private int handSize = 60;
+	public Card[] cards = new Card[handSize];
+        public void generateHand()
+        {
+                int countCards = 0;
+		for(Card.Colors s: Card.Colors.values())
+                {
+                    for(Card.Ranks v: Card.Ranks.values())
+                    {
+                        cards[countCards] = (new Card(s,v) {
+                            @Override
+                            public String toString() {
+                                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                            }
+                        });
+                        countCards++;
+                    }
+                }//end outter for
+        }
     private final String gameName;//the title of the game
     private ArrayList <Player> players;// the players of the game
     
